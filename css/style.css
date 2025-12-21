@@ -1,0 +1,506 @@
+/* =========================================
+   1. VARIABLES & THEME SETUP
+   ========================================= */
+:root {
+  /* --- Warna Utama (Theme Colors) --- */
+  --bg-dark: #050a10;
+  --text-white: #e6f1ff;
+  --accent-color: #00f2fe;
+
+  /* --- Warna Skill Specific --- */
+  --html-color: #ff8e53;
+  --css-color: #4facfe;
+  --py-color: #00ff88;
+  --bs-color: #7952b3;
+  --git-color: #f0f0f0;
+
+  /* --- Typography (Font Family) --- */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* =========================================
+   2. GLOBAL RESET & BOOTSTRAP OVERRIDES
+   ========================================= */
+html,
+body {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.08), transparent 25%), radial-gradient(circle at 85% 30%, rgba(79, 172, 254, 0.08), transparent 25%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* --- Override Warna Bootstrap --- */
+.text-warning {
+  color: var(--accent-color) !important;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+.bg-warning {
+  background-color: var(--accent-color) !important;
+  color: #000 !important;
+}
+
+.btn-warning {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: #000 !important;
+  box-shadow: 0 0 4px rgba(0, 242, 254, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #00c2cb !important;
+  border-color: #00c2cb !important;
+  box-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
+}
+
+.border-warning {
+  border-color: var(--accent-color) !important;
+}
+
+/* --- Typography Settings --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: var(--font-heading);
+  letter-spacing: -0.5px;
+}
+
+.tech-badge,
+.skill-percent,
+.badge,
+.copyright-text span,
+small[style*='monospace'] {
+  font-family: var(--font-mono) !important;
+  letter-spacing: 0px;
+}
+
+.nav-link,
+.btn {
+  font-family: var(--font-heading);
+}
+
+/* =========================================
+   3. ANIMATIONS 
+   ========================================= */
+
+/* Kedap-kedip Teks */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--accent-color);
+  }
+  50% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--accent-color);
+  }
+}
+
+/* Loading Bar Jalan */
+@keyframes loadingBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Preloader Hilang */
+@keyframes vanish {
+  0% {
+    opacity: 1;
+    z-index: 9999;
+  }
+  90% {
+    opacity: 0;
+    z-index: 9999;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+  }
+}
+
+/* Navbar Muncul */
+@keyframes showNav {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Class Helper Animasi --- */
+.animate-pulse {
+  animation: pulse 1.5s infinite;
+}
+
+/* =========================================
+   4. PRELOADER SECTION
+   ========================================= */
+.preloader-screen {
+  z-index: 9999 !important; /* Wajib paling atas */
+  animation: vanish 0.8s ease-in-out 3s forwards;
+}
+
+.progress-bar {
+  animation: loadingBar 3s ease-in-out forwards;
+}
+
+/* =========================================
+   5. NAVBAR SECTION
+   ========================================= */
+.navbar {
+  animation: showNav 1s ease-in-out 2.8s backwards;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  padding-bottom: 5px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  left: 0;
+  background-color: var(--accent-color) !important;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   6. HERO SECTION
+   ========================================= */
+.photo-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.photo-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: -1;
+}
+
+.profile-img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .profile-img {
+    width: 350px;
+    height: 350px;
+  }
+  .photo-wrapper::before {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+/* =========================================
+   7. SHARED COMPONENTS (Card Base)
+   ========================================= */
+.glass-card,
+.skill-card,
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover,
+.skill-card:hover,
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+/* =========================================
+   8. SKILL SECTION
+   ========================================= */
+.skill-card {
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.skill-percent {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Progress Bar Track */
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Custom Animation Logic untuk Skill */
+[data-aos='skill-load'] {
+  width: 0;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: width 1.5s cubic-bezier(0.1, 0.7, 1, 0.1);
+}
+
+[data-aos='skill-load'].aos-animate {
+  width: var(--target-width);
+}
+
+/* Fill Bar Styling */
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Skill Colors */
+.text-html {
+  color: var(--html-color);
+}
+.bar-html {
+  background: linear-gradient(90deg, #ff6b6b, var(--html-color));
+  box-shadow: 0 0 15px rgba(255, 142, 83, 0.4);
+}
+
+.text-css {
+  color: var(--css-color);
+}
+.bar-css {
+  background: linear-gradient(90deg, #4facfe, var(--css-color));
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+.text-python {
+  color: var(--py-color);
+}
+.bar-python {
+  background: linear-gradient(90deg, #1db954, var(--py-color));
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+.bar-bs {
+  background: linear-gradient(90deg, #667eea, var(--bs-color));
+  box-shadow: 0 0 15px rgba(121, 82, 179, 0.4);
+}
+
+.text-git {
+  color: var(--git-color);
+}
+.bar-git {
+  background: linear-gradient(90deg, #6c757d, var(--git-color));
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================
+   9. PROJECT SECTION
+   ========================================= */
+.project-card {
+  overflow: hidden;
+}
+
+.project-img-wrapper {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  height: 250px;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+@media (min-width: 992px) {
+  .col-lg-8 .project-img-wrapper {
+    height: 400px;
+  }
+}
+
+/* =========================================
+   10. CONTACT SECTION
+   ========================================= */
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.contact-icon:hover {
+  background: var(--accent-color);
+  color: black;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+.custom-input {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 15px;
+}
+
+.custom-input:focus {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+  color: white;
+}
+
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================
+   11. FOOTER SECTION
+   ========================================= */
+footer {
+  margin-top: 100px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  position: relative;
+  z-index: 10;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #adb5bd;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--accent-color);
+  color: black;
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+}
+
+.copyright-text {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
