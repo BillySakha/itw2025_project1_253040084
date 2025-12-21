@@ -1,28 +1,26 @@
 # ITW 2025 - Project 1 (Personal Portfolio)
 
-**Nama:** Billy Barbar Sakha  
-**NPM:** 253040084  
-**Kelas:** IF-B
+**Data Mahasiswa:**
+* **Nama:** Billy Barbar Sakha
+* **NPM:** 253040084
+* **Kelas:** IF-B
 
 ## Deskripsi Proyek
-
-[cite_start]Website ini adalah proyek **Personal Portfolio** untuk memenuhi Tugas Besar mata kuliah Internet dan Teknologi Web (ITW) 2025 di Universitas Pasundan[cite: 26]. [cite_start]Proyek ini dibangun dari nol (_scratch_) tanpa menggunakan template[cite: 45].
+Website ini adalah proyek Personal Portfolio statis yang dibuat untuk memenuhi Tugas Besar mata kuliah Internet dan Teknologi Web (ITW) 2025 di Universitas Pasundan. Proyek ini dibangun dari nol (scratch) dan bersifat responsif.
 
 ## Spesifikasi Teknis
-
-- [cite_start]**Framework:** Bootstrap 5[cite: 24].
-- [cite_start]**Interaktivitas:** Contact Form (Fetch API)[cite: 31].
-- [cite_start]**Library Eksternal:** AOS (Animate On Scroll) untuk visual interaktif[cite: 35].
+* **Framework:** Bootstrap 5 (Utility Classes & Components).
+* **Interaktivitas:** Form Contact fungsional menggunakan Fetch API.
+* **Animasi:** Library AOS (Animate On Scroll) untuk interaktivitas visual.
+* **Struktur:** Terdiri dari 5+ bagian utama (Hero, About, Skill, Projects, Contact).
 
 ## Kredit & Referensi Aset
+Sesuai dengan ketentuan aset dan hak cipta, berikut adalah daftar sumber yang digunakan dalam proyek ini:
 
-[cite_start]Sesuai dengan ketentuan lisensi _free-to-use_, berikut adalah daftar aset yang digunakan:
-
-- [cite_start]**Ikon:** [Bootstrap Icons](https://icons.getbootstrap.com/)[cite: 32].
-- [cite_start]**Tipografi:** [Google Fonts](https://fonts.google.com/) (Inter, JetBrains Mono, Outfit).
-- [cite_start]**Animasi:** [AOS Library](https://michalsnik.github.io/aos/)[cite: 35].
-- [cite_start]**Referensi Belajar:** [Web Programming Unpas (WPU)](https://www.youtube.com/@sandhikagalihWPU)[cite: 12].
+* **Ikon:** Bootstrap Icons.
+* **Tipografi:** Google Fonts (Inter, JetBrains Mono, Outfit).
+* **Library Visual:** AOS.js.
+* **Referensi Belajar:** Web Programming Unpas (WPU) oleh Bapak Sandhika Galih.
 
 ---
-
-[cite_start]_Proyek ini dikerjakan secara mandiri (hand-coded) tanpa penggunaan AI untuk men-generate kode sesuai dengan integritas akademik yang ditentukan[cite: 39, 40]._
+© 2025 Billy Barbar Sakha - Teknik Informatika Universitas Pasundan.
