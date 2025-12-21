@@ -3,7 +3,6 @@ AOS.init({
   once: false,
   mirror: true,
   duration: 1000,
-  disable: 'mobile',
 });
 
 // 2. Konfigurasi Contact Forms
