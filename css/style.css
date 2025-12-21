@@ -321,11 +321,13 @@ small[style*='monospace'] {
 }
 
 [data-aos='skill-load'].aos-animate {
-  width: var(--target-width);
+  width: var(--target-width) !important;
 }
 
 /* Fill Bar Styling */
 .progress-fill {
+  display: block;
+  width: 0;
   height: 100%;
   border-radius: 10px;
   position: relative;

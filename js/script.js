@@ -1,8 +1,9 @@
 // 1. Inisialisasi AOS (Animasi)
 AOS.init({
   once: false,
-  mirror: true,
   duration: 1000,
+  disable: false,
+  offset: 100,
 });
 
 // 2. Konfigurasi Contact Forms
