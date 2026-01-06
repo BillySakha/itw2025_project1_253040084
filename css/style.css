@@ -2,7 +2,7 @@
    1. VARIABLES & THEME SETUP
    ========================================= */
 :root {
-  /* --- Warna Utama (Theme Colors) --- */
+  /* --- Warna Utama --- */
   --bg-dark: #050a10;
   --text-white: #e6f1ff;
   --accent-color: #00f2fe;
@@ -14,7 +14,7 @@
   --bs-color: #7952b3;
   --git-color: #f0f0f0;
 
-  /* --- Typography (Font Family) --- */
+  /* --- Typography--- */
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -164,7 +164,7 @@ small[style*='monospace'] {
    4. PRELOADER SECTION
    ========================================= */
 .preloader-screen {
-  z-index: 9999 !important; /* Wajib paling atas */
+  z-index: 9999 !important;
   animation: vanish 0.8s ease-in-out 3s forwards;
 }
 
